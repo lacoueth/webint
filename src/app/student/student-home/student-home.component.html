@@ -1,0 +1,18 @@
+<header>
+  <app-name-and-pic [firstName]="studentData.firstName"
+                    [lastName]="studentData.lastName"
+                    [picUrl]="studentData.profilePicUrl"></app-name-and-pic>
+  <app-date-and-time></app-date-and-time>
+</header>
+
+<section>
+
+<div class="matieres-container">
+  <div *ngFor="let matiere of studentMarks"
+       class="matiere-container">
+    <app-matiere-card [matiere]="matiere.matiere"
+                      [marks]="matiere.marks">
+    </app-matiere-card>
+  </div>
+</div>
+</section>

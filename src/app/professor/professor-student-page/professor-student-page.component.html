@@ -1,0 +1,21 @@
+<header>
+  <app-name-and-pic [firstName]="studentData.firstName"
+                    [lastName]="studentData.lastName"
+                    [picUrl]="studentData.profilePicUrl"></app-name-and-pic>
+  <app-date-and-time></app-date-and-time>
+</header>
+
+<section>
+
+<button (click)="navigateBack()">Retour</button>
+
+<h1>{{studentName}}</h1>
+
+<app-average-and-graph></app-average-and-graph>
+
+<div *ngFor="let _kholle of studentKholles">
+  <app-kholle-card [kholleData]="_kholle">
+
+  </app-kholle-card>
+</div>
+</section>

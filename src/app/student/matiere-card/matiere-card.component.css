@@ -1,0 +1,24 @@
+.matiere-card {
+  margin: 0.6rem;
+}
+
+.card {
+  box-shadow: 0 2px 8px 0 rgba(128, 128, 128, 0.4);
+  border-radius: 7px;
+  padding: 0.5rem;
+}
+
+.matiere-name {
+  font-weight: 200;
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+}
+
+table {
+  width: 100%;
+}
+
+.average {
+  opacity: 0.8;
+  margin: 0.2rem;
+}

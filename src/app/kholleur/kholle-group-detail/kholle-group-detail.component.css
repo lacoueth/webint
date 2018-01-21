@@ -1,0 +1,20 @@
+.students-tabs {
+  white-space: nowrap;
+  overflow: scroll;
+  border-bottom: 1px solid rgba(1, 1, 1, 0.2);
+  margin-bottom: 20px;
+
+}
+.students-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.student-tab {
+  display: inline-block;
+
+  padding: 4px 20px 2px 10px;
+}
+
+.selected {
+  border-bottom: 3px solid #1c6eff;
+}

@@ -1,0 +1,16 @@
+<div class="students-tabs">
+  <div *ngFor="let _student of group?.students"
+       class="student-tab"
+       (click)="this.selectedStudent = _student"
+       [class.selected]="_student === selectedStudent">
+    <app-name-and-pic [lastName]="_student.lastName"
+                      [firstName]="_student.firstName"
+                      [picUrl]="_student.picUrl"
+                      [inHeader]="false">
+    </app-name-and-pic>
+  </div>
+</div>
+
+<app-student-detail *ngIf="selectedStudent"
+                    [student]="selectedStudent">
+</app-student-detail>

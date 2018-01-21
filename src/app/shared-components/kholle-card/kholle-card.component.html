@@ -1,0 +1,25 @@
+<div class="kholle-header">
+  <div class="kholle-date">
+    {{kholleData.date}} <span>{{kholleData.hour + 'h'}}</span>
+  </div>
+  <div class="kholleur-name">
+    {{kholleData.kholleurName}}
+  </div>
+</div>
+
+<div class="kholle-card">
+  <div class="card">
+    <table>
+      <tr>
+        <th>énoncé</th>
+        <th>commentaires</th>
+        <th>note</th>
+      </tr>
+      <tr>
+        <td>{{kholleData.enonce}}</td>
+        <td>{{kholleData.comments}}</td>
+        <td>{{kholleData.mark}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

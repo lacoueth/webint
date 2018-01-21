@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  @HostListener('window:keydown', ['$event'])
+  navigateToPage(event) {
+    switch (event.key) {
+      case 'π':
+        document.location.replace('/professor');
+        break;
+      case 'È':
+        document.location.replace('/kholleur/1');
+        break;
+      case 'Ò':
+        document.location.replace('/student');
+        break;
+    }
+  }
 }

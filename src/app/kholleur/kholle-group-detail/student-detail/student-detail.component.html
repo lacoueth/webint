@@ -1,0 +1,14 @@
+<!--<app-average-and-graph></app-average-and-graph>-->
+
+<button (click)="newExercice = !newExercice">
+  Donner un exercice
+</button>
+
+<app-exercice-form *ngIf="newExercice">
+</app-exercice-form>
+
+<div *ngFor="let _kholle of studentKholles">
+  <app-kholle-card [kholleData]="_kholle">
+
+  </app-kholle-card>
+</div>

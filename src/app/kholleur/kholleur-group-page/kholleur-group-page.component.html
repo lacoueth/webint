@@ -1,0 +1,14 @@
+<header>
+  <app-name-and-pic [firstName]="profile.firstName"
+                    [lastName]="profile.lastName"
+                    [picUrl]="profile.profilePicUrl"></app-name-and-pic>
+  <app-date-and-time></app-date-and-time>
+</header>
+
+<section id="top">
+  <button (click)="navigateBack()">Retour</button>
+  <h1>
+    Groupe 1
+  </h1>
+  <app-kholle-group-detail></app-kholle-group-detail>
+</section>

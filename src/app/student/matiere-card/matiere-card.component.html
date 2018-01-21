@@ -1,0 +1,23 @@
+<div class="matiere-card">
+
+  <h2 class="matiere-name"
+  [routerLink]="matiere">{{matiere}}</h2>
+
+  <div class="card">
+
+    <table class="average">
+      <tr>
+        <td>moyenne</td>
+        <td>{{avg}}</td>
+      </tr>
+    </table>
+
+    <table>
+      <tr *ngFor="let colle of marks">
+        <td>{{colle.date}}</td>
+        <td>{{colle.kholleur}}</td>
+        <td>{{colle.mark}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

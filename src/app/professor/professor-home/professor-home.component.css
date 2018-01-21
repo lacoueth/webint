@@ -1,0 +1,25 @@
+.group-cards-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.student-card-container {
+  /*flex: 1 1 auto;*/
+  flex-basis: 33%;
+  padding: 0.2rem;
+}
+
+@media screen and (max-width: 500px){
+  .group-cards-container {
+    display: block;
+    /*flex-direction: row;*/
+    width: 100%;
+  }
+
+  .student-card-container {
+    /*flex: 1 1 auto;*/
+    /*flex-basis: 33%;*/
+    padding: 0.2rem;
+  }
+}

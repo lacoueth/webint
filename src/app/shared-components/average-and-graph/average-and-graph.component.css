@@ -1,0 +1,27 @@
+.avg-graph-container {
+  display: flex;
+  flex-direction: row;
+  margin: 0 1rem;
+}
+
+.avg-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+}
+
+.avg-name {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.avg-nb {
+  font-size: 3rem;
+  font-weight: 200;
+}
+
+.graph-container {
+  flex: 1 1 auto;
+  background-color: #dfdfdf;
+  margin: 0.5rem;
+}

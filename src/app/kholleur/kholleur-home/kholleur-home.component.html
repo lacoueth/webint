@@ -1,0 +1,29 @@
+<header>
+  <app-name-and-pic [firstName]="profile.firstName"
+                    [lastName]="profile.lastName"
+                    [picUrl]="profile.profilePicUrl"></app-name-and-pic>
+  <app-date-and-time></app-date-and-time>
+</header>
+
+<section>
+
+  <h1>PSI* Joffre - Montpellier</h1>
+
+  <p>bout de code de mastafa</p>
+
+  <div *ngFor="let _group of groups">
+    <h2>{{_group.groupName}}
+      <button [routerLink]="_group.groupName"
+              fragment="top">Afficher
+      </button>
+    </h2>
+    <div class="group-cards-container">
+      <div *ngFor="let _student of _group.students"
+           class="student-card-container">
+
+        <app-student-card [student]="_student">
+        </app-student-card>
+      </div>
+    </div>
+  </div>
+</section>

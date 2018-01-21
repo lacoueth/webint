@@ -1,5 +1,7 @@
 # Kholleboost
 
+Pour naviger dans les pages STUDENT, PROFESSOR et KHOLLEUR, utiliser les touches alt+s, alt+p et alt+k.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.0.
 
 ## Development server

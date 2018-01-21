@@ -1,0 +1,26 @@
+img {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  margin: 7px;
+}
+
+#header-lastname, #header-firstname {
+  margin: 13px 0 0 5px;
+}
+
+#header-lastname {
+  font-weight: 600
+}
+
+#name-and-pic-container {
+  display: flex;
+  flex-direction: row;
+  /*text-align: center;*/
+}
+
+@media screen and (max-width: 500px){
+  .inHeader#header-lastname, .inHeader#header-firstname {
+    display: none;
+  }
+}

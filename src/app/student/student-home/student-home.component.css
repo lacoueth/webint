@@ -1,0 +1,9 @@
+.matieres-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.matiere-container {
+  width: 50%;
+}
