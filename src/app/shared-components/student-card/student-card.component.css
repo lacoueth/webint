@@ -48,3 +48,6 @@ img {
   font-size: 2rem;
   margin: 5px 14px;
 }
+.card {
+  border-radius: 5px;
+}

@@ -1,16 +1,18 @@
-<td>
+<div class="student-card card">
   <img [src]="student.picUrl"
        alt="profile-picture">
-</td>
 
-    <td >
+  <div class="names">
+    <div id="student-card-firstname">
       {{student.firstName}}
-    </td>
-    <td >
+    </div>
+    <div id="student-card-lastname">
       {{student.lastName}}
-    </td>
-
-  <td
+    </div>
+  </div>
+  <div class="flex-space"></div>
+  <div id="student-card-avg"
        *ngIf="student.average">
     {{student.average}}
-  </td>
+  </div>
+</div>
