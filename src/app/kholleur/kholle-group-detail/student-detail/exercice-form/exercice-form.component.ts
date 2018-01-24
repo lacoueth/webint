@@ -6,10 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./exercice-form.component.css']
 })
 export class ExerciceFormComponent implements OnInit {
-
+  onKhole = false;
+  comments: string;
+  mark: number;
+  exercice: any;
+  onMark: false
   constructor() { }
 
   ngOnInit() {
   }
+  sendKhole(){
 
+  }
+ startExercice(event) {
+    this.onKhole = true;
+    this.exercice = event
+ }
 }

@@ -12,7 +12,7 @@ export class StudentMatierePageComponent implements OnInit {
   private random = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium ligula mauris, eget accumsan nunc dictum eu. Etiam nisi lacus, sagittis eu lorem ut, venenatis fringilla sem. Quisque nisi ligula, viverra eu molestie sed, auctor non turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.';
 
   matiere: string;
-
+  datetime : string;
   studentData: any;
   studentMarks: any;
 
@@ -29,9 +29,8 @@ export class StudentMatierePageComponent implements OnInit {
     {date: '12/23/12', hour: '17', kholleurName: 'Duc du Bourg', enonce: this.random, comments: this.random.substr(13, 140), mark: 9},
     {date: '12/23/12', hour: '13', kholleurName: 'M.SNOW', enonce: this.random, comments: this.random.substr(13, 140), mark: 18}
   ];
-
   constructor(private _route: ActivatedRoute,
-              private _location: Location) {
+  ) {
   }
 
   ngOnInit() {
@@ -43,10 +42,18 @@ export class StudentMatierePageComponent implements OnInit {
         this.studentMarks = res['studentData']['marks'];
       });
     });
+    this.datetime = this.getCurrentDate();
 
   }
 
-  navigateBack() {
-    this._location.back();
+  getCurrentDate() {
+    const options = {
+      weekday: 'long',
+      month: 'long',
+      day: 'numeric'
+    };
+    return (new Date()).toLocaleDateString('fr-FR', options);
   }
+
+
 }

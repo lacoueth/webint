@@ -1,9 +1,39 @@
-<div class="avg-graph-container">
-  <div class="avg-container">
-    <div class="avg-name">moyenne</div>
-    <div class="avg-nb">{{avg}}</div>
+<div class="row">
+  <div class="col-lg-4">
+    <div class="panel panel-defaut">
+      <div class="panel-heading">
+        Moyenne
+      </div>
+      <div class="panel-body text-center">
+        <circle-progress
+          [percent]="(avg/20)*100"
+          [title]="avg"
+          [showTitle]="false"
+          [clockwise]="true"
+          [outerStrokeColor]="'#9c39c6'"
+          [showBackground]="true"
+          [animateTitle]="true"
+          [showSubtitle]="true"
+          [titleFontSize]="40"
+          [subtitle]="avg"
+          [subtitleFontSize]="50"
+        ></circle-progress>
+
+
+      </div>
+    </div>
   </div>
-  <div class="graph-container">
-    graph
+  <div class="col-lg-8">
+    <div class="panel panel-defaut">
+      <div class="panel-heading">
+        Dernieres notes
+      </div>
+      <div class="panel-body">
+
+        <img class="img img-responsive" src="assets/images/graph_student.png">
+      </div>
+    </div>
+
+
   </div>
 </div>

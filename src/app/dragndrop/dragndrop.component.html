@@ -1,33 +1,17 @@
-<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="quitDrag(event)">
-  <ul id="myList">Banque d'exercices
-    <li *ngFor="let exo of exercices; let i = index"
-        [value]="i"
-        (click)="launchExo($event)">
-      {{exo.name}}
-    </li>
-  </ul>
-</div>
+<div class="row">
+  <div class="col-lg-12">
+    <label class="uploader" ondragover="return false;"
+           [class.loaded]="loaded"
+           [style.outlineColor]="dragging ? activeColor : baseColor"
+           (dragenter)="handleDragEnter()"
+           (dragleave)="handleDragLeave()"
+           (drop)="handleDrop($event)">
 
-<!--
-input file
--->
-<input id="choosedfile" type="file" (change)="handleFiles($event)">
-<!--<button id="submit" (click)="handleFiles($event)">submit</button>-->
-
-<!--
-remove exo
--->
-<button id="remove" onclick="remove()">remove</button>
-
-<pre>
-
-
-</pre>
-<!--
-affiche exo
--->
-<div>
-  <div id="titlecontent"></div>
-  <object type="application/pdf" id="printingPDF"></object>
-  <div id="printingtext"></div>
+      <input type="file" name="file"
+             (change)="handleInputChange($event)">
+      Deposez Vos fichiers ou cliquez ici pour importer un exercice.<br/> Vous devez importer un exercice pour debuter la colle.
+    </label>
+  </div>
+  <br/>
+  <div *ngIf="exercice!=undefined">Commencer la colle avec l'exercice {{exercice.name}} ? <button class="btn" (click)="startKhole()">Commencer</button></div>
 </div>

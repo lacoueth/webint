@@ -1,21 +1,31 @@
 <header>
-  <app-name-and-pic [firstName]="studentData.firstName"
-                    [lastName]="studentData.lastName"
-                    [picUrl]="studentData.profilePicUrl"></app-name-and-pic>
-  <app-date-and-time></app-date-and-time>
+  <nav class="navbar navbar-default navbar-fixed-left">
+    <app-name-and-pic [matieres]="studentMarks" [firstName]="studentData.firstName"
+                      [lastName]="studentData.lastName"
+                      [picUrl]="studentData.profilePicUrl"></app-name-and-pic>
+    <app-date-and-time></app-date-and-time>
+  </nav>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="brand navbar-header">
+        <div style="margin-top : 10px !important;">
+          {{matiere}}</div></div>
+      <button class='btn btn-default btn-lg navbar-btn'   [routerLink]="'student'" ><span
+        class="glyphicon glyphicon-arrow-left"> </span></button>
+      <h3 class="pull-right disp">{{datetime}}</h3>
+    </div>
+  </nav>
 </header>
 
 <section>
+  <div class="container">
 
-<button (click)="navigateBack()">Retour</button>
+    <app-average-and-graph></app-average-and-graph>
 
-<h1>{{matiere}}</h1>
+    <div *ngFor="let _kholle of studentKholles">
+      <app-kholle-card [kholleData]="_kholle">
 
-<app-average-and-graph></app-average-and-graph>
-
-<div *ngFor="let _kholle of studentKholles">
-  <app-kholle-card [kholleData]="_kholle">
-
-  </app-kholle-card>
-</div>
+      </app-kholle-card>
+    </div>
+  </div>
 </section>

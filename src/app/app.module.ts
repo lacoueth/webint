@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { FileDropModule } from 'ngx-file-drop';
+
 
 import { AppComponent } from './app.component';
 import { AverageAndGraphComponent } from './shared-components/average-and-graph/average-and-graph.component';
@@ -25,6 +28,7 @@ import { ExerciceFormComponent } from './kholleur/kholle-group-detail/student-de
 import { DirectionComponent } from './direction/direction.component';
 import { DragndropComponent } from './dragndrop/dragndrop.component';
 import { DragndropaltComponent } from './dragndropalt/dragndropalt.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -51,7 +55,23 @@ import { DragndropaltComponent } from './dragndropalt/dragndropalt.component';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routesConfig)
+    RouterModule.forRoot(routesConfig),
+    NgCircleProgressModule.forRoot({
+      "radius": 60,
+      "space": -10,
+      "outerStrokeWidth": 10,
+      "outerStrokeColor": "#4882c2",
+      "innerStrokeColor": "#e7e8ea",
+      "innerStrokeWidth": 10,
+      "animateTitle": false,
+      "animationDuration": 1000,
+      "showUnits": false,
+      "showBackground": false,
+      "clockwise": false
+    }),
+    FileDropModule,
+    FormsModule
+
   ],
   providers: [
     StudentDataServiceResolver,

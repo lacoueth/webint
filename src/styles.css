@@ -1,57 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900');
-
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 html {
   font-size: 20px;
-
-  box-sizing: border-box;
+  width : 100vw !important;
+  /* box-sizing: border-box; */
 }
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Nunito', sans-serif;
 
   margin: 0;
   width: 100%;
   height: 100%;
+  background-color: #eeeced !important;
+  color: #777777 !important;
 }
 
-header {
-  font-size: 1.3rem;
-  font-weight: 400;
-
-  height: 60px;
-  /*background-color: cornflowerblue;*/
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-section {
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 0.6rem 0.6rem 0.6rem;
-}
 
 h1 {
   font-weight: 300;
 }
 
-button {
-  border: 2px solid #1c6eff;
-  background-color: white;
-  color: #1c6eff;
-  border-radius: 0.9rem;
 
-  padding: 0.3rem 0.7rem;
-  min-width: 90px;
-
-  line-height: 1;
-
-  font-size: 1rem;
-  font-weight: 300;
-}
 
 button:hover {
   background-color: #1c6eff;
@@ -64,7 +35,6 @@ button:hover {
   border-radius: 7px;
   padding: 0.5rem;
 }
-
 
 table {
   /*width: 100%;*/
@@ -83,5 +53,250 @@ table th {
   table {
     overflow-x: auto;
     display: block;
+  }
+}
+
+
+.navbar {
+  border: 0px !important;
+  color:inherit!important;
+}
+.navbar-header {
+  font-size: xx-large;
+}
+.navbar-top {
+  margin-top:20px;
+  margin-bottom: 40px;
+  font-size: xx-large;
+  font-weight:bold;
+}
+
+.navbar-default {
+  background-color: #f5f5f5 !important;
+  margin-color: #f5f5f5;
+  margin-bottom: 15px !important;
+  border-radius: 0px !important;
+  box-shadow: 0 0px 15px 0px rgba(0, 0, 0, .15);
+
+}
+.navbar-default .navbar-brand {
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  background-color: transparent;
+}
+.navbar-default .navbar-text {
+}
+.navbar-default .navbar-nav > li > a {
+
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  background-origin: border-box;
+  background-size: 10px 100%;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(#b958b4, #337bc1);
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  background-origin: border-box;
+  background-size: 10px 100%;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(#b958b4, #337bc1);
+}
+.navbar-default .navbar-nav > .disabled > a,
+.navbar-default .navbar-nav > .disabled > a:hover,
+.navbar-default .navbar-nav > .disabled > a:focus {
+  background-color: transparent;
+}
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+  border-radius: 1px;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  border-right: 0px solid grey
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background: linear-gradient(#b958b4, #337bc1) !important;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #e7e7e7;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  border-right: 0px solid grey
+}
+
+.panel {
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid transparent;
+  border-radius: 5px !important;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+  box-shadow: 0 0px 15px 0px rgba(0, 0, 0, .15);
+}
+.panel-body {
+  padding: 15px;
+  font-size: medium;
+}
+.panel-heading-big {
+  font-size: xx-large !important;
+}
+.panel-heading {
+  font-size: x-large;
+  padding: 10px 15px;
+  border-bottom: 2px solid transparent;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.panel-heading > .dropdown .dropdown-toggle {
+  color: inherit;
+}
+.panel-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  color: inherit;
+}
+.navbar-btn {
+  min-width:90px;
+  border: 2px solid #b958b4 !important;
+  color: inherit !important;
+  background-color:f5f5f5;
+}
+.btn {
+  border-radius :100px;
+
+}
+.btn-default {
+  color: inherit !important;
+  background-color: #f5f5f5 ;
+  border-color: #fff;
+}
+.btn-default:focus,
+.btn-default.focus {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #e6e6e6;
+}
+.btn-default:hover {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #e6e6e6;
+}
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 503px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 723px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 923px;
+  }
+}
+@media (min-width: 1432px) {
+  .container {
+    width: 1170px;
+  }
+}
+body {
+  padding-top: 50px;
+  min-height: 200vh;
+}
+@media (min-width: 768px) {
+  body {
+    padding-top: 0;
+  }
+}
+.navbar-fixed-right,
+.navbar-fixed-left {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030;
+  box-shadow: 0 0px 15px 0px rgba(0, 0, 0, .15);
+}
+@media (min-width: 768px) and (min-width: 768px) {
+  .navbar-fixed-right,
+  .navbar-fixed-left {
+    width: 232px;
+    height: 100vh;
+    border-radius: 0;
+  }
+  .navbar-fixed-right .container,
+  .navbar-fixed-left .container {
+    padding-right: 0;
+    padding-left: 0;
+    width: auto;
+  }
+  .navbar-fixed-right .navbar-header,
+  .navbar-fixed-left .navbar-header {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .navbar-fixed-right .navbar-collapse,
+  .navbar-fixed-left .navbar-collapse {
+    padding-right: 0;
+    padding-left: 0;
+    max-height: none;
+  }
+  .navbar-fixed-right .navbar-collapse .navbar-nav,
+  .navbar-fixed-left .navbar-collapse .navbar-nav {
+    float: none !important;
+  }
+  .navbar-fixed-right .navbar-collapse .navbar-nav > li,
+  .navbar-fixed-left .navbar-collapse .navbar-nav > li {
+    width: 100%;
+  }
+  .navbar-fixed-right .navbar-collapse .navbar-nav > li.dropdown .dropdown-menu,
+  .navbar-fixed-left .navbar-collapse .navbar-nav > li.dropdown .dropdown-menu {
+    top: 0;
+  }
+  .navbar-fixed-right .navbar-collapse .navbar-nav.navbar-right,
+  .navbar-fixed-left .navbar-collapse .navbar-nav.navbar-right {
+    margin-right: 0;
+  }
+}
+@media (min-width: 768px) {
+  body {
+    padding-left: 232px;
+  }
+}
+@media (min-width: 768px) {
+  .navbar-fixed-left {
+    right: auto !important;
+    left: 0 !important;
+    border-width: 0 1px 0 0 !important;
+  }
+  .navbar-fixed-left .dropdown .dropdown-menu {
+    left: 100%;
+    right: auto;
+    border-radius: 0 3px 3px 0;
+  }
+  .navbar-fixed-left .dropdown .dropdown-toggle .caret {
+    border-top: 4px solid transparent;
+    border-left: 4px solid;
+    border-bottom: 4px solid transparent;
+    border-right: none;
   }
 }

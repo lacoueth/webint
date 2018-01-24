@@ -1,25 +1,31 @@
-<div class="kholle-header">
-  <div class="kholle-date">
-    {{kholleData.date}} <span>{{kholleData.hour + 'h'}}</span>
-  </div>
-  <div class="kholleur-name">
-    {{kholleData.kholleurName}}
-  </div>
-</div>
+<div class="panel ">
+  <div class="panel-heading">
 
-<div class="kholle-card">
-  <div class="card">
-    <table>
-      <tr>
-        <th>énoncé</th>
-        <th>commentaires</th>
-        <th>note</th>
-      </tr>
-      <tr>
-        <td>{{kholleData.enonce}}</td>
-        <td>{{kholleData.comments}}</td>
-        <td>{{kholleData.mark}}</td>
-      </tr>
-    </table>
+    <div class="kholeur-name">
+      {{kholleData.kholleurName}}
+      <div class="pull-right" style="font-weight: normal;">
+        {{kholleData.date}} <span>{{kholleData.hour + 'h'}}</span>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-lg-9">
+        <div class="col-md-6">
+          <h5>Enonce :</h5>
+          {{kholleData.enonce}}
+        </div>
+        <div class="col-md-6">
+          <h5>Commentaires :</h5>
+          {{kholleData.comments}}
+        </div>
+      </div>
+      <div class="col-lg-3 khole-mark">
+        {{kholleData.mark}}/20
+      </div>
+    </div>
   </div>
 </div>

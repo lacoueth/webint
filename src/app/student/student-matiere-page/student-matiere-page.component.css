@@ -1,0 +1,23 @@
+.padtop {
+  padding-top: 3%;
+}
+
+.brand {
+  position: absolute;
+  left: 45%;
+  margin-left: -50px !important;  /* 50% of your logo width */
+  display: block;
+}
+.container {
+  padding-top: 50px;
+}
+@media screen and (max-width: 500px){
+  .navbar-btn {
+    max-width: 60px;
+    min-width: 60px !important;
+  }
+  .disp {
+    display: none !important;
+  }
+
+}

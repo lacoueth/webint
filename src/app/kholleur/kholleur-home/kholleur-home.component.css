@@ -22,4 +22,27 @@
     /*flex-basis: 33%;*/
     padding: 0.2rem;
   }
+  .disp {
+    display : none !important;
+  }
+}
+
+.mark-panel:hover {
+  background-color: #e6e6e6;
+}
+
+.map {
+  border-radius:5px;
+}
+
+.table-img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 7px;
+  object-fit: cover;
+}
+
+td {
+  vertical-align: middle !important;
 }

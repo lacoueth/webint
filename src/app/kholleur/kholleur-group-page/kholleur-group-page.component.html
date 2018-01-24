@@ -1,14 +1,26 @@
 <header>
-  <app-name-and-pic [firstName]="profile.firstName"
-                    [lastName]="profile.lastName"
-                    [picUrl]="profile.profilePicUrl"></app-name-and-pic>
-  <app-date-and-time></app-date-and-time>
+  <nav class="navbar navbar-default navbar-fixed-left">
+
+    <app-name-and-pic [firstName]="profile.firstName"
+                      [lastName]="profile.lastName"
+                      [picUrl]="profile.profilePicUrl" [matieres]="groupstopass"></app-name-and-pic>
+    <app-date-and-time></app-date-and-time>
+  </nav>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="brand navbar-header">
+        <div style="margin-top : 10px !important;">
+          Groupe 1
+        </div></div>
+      <button class='btn btn-default btn-lg navbar-btn'   [routerLink]="'/kholleur/1'" ><span
+        class="glyphicon glyphicon-arrow-left"> </span></button>
+      <h3 class="pull-right disp">{{datetime}}</h3>
+    </div>
+  </nav>
 </header>
 
 <section id="top">
-  <button (click)="navigateBack()">Retour</button>
-  <h1>
-    Groupe 1
-  </h1>
-  <app-kholle-group-detail></app-kholle-group-detail>
+  <div class="container">
+    <app-kholle-group-detail></app-kholle-group-detail>
+  </div>
 </section>

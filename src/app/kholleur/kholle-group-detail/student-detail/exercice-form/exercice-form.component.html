@@ -1,4 +1,19 @@
-<p>
-  Bout de code de quentin
-</p>
-<app-dragndropalt></app-dragndropalt>
+<div class="panel">
+  <div class="panel-body" *ngIf="!onKhole">
+<app-dragndrop (exerciceUpdated)="startExercice($event)"></app-dragndrop>
+  </div>
+  <div class="panel-body" *ngIf="onKhole">
+    <div class="form-group">
+      <div *ngIf="!onMark">
+      <label for="comment">Commentaires:</label>
+      <textarea [(ngModel)]="comments" class="form-control" rows="5" id="comment" #myComment='ngModel'></textarea>
+        <button class="btn pull-right" [disabled]="comments==''" (click)="onMark=true">Noter</button>
+    </div>
+
+  </div>
+
+  <div *ngIf="onMark">
+  <input type="number" [(ngModel)]="mark" #myMark="ngModel" class="form-control">
+  <button class="btn pull-right" [disabled]="mark==undefined" (click)="sendKhole()">Ajouter la Khole</button>
+  </div>
+</div>

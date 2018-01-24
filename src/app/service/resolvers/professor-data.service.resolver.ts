@@ -20,7 +20,7 @@ export class ProfessorDataServiceResolver implements Resolve<any> {
           firstName: 'Minila',
           lastName: 'Sahli',
           average: 4,
-          picUrl: 'https://media-exp2.licdn.com/media-proxy/ext?w=800&h=800&hash=AKwbqmOwWjKc2sdK3EgfdNckNuk%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta5g-0R6nlh8Tw1It6a2FowGz60oISJLOTW3hGTrbi6zxDzCdDrauCMPQxSxnCV1w4XVDII_ZMUGQaOTFLvebB4Eb0eW8WPSNMikhRAgYoWIcwdhqMDQulI6KMd6kTiN82cJSRySTF4jxXVVxADUw'
+          picUrl: 'http://leonard-photographe.fr/wp-content/uploads/2016/11/Profil-Jordan-003.jpg'
         },
         {
           firstName: 'Mastafa',
