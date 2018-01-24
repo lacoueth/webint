@@ -22,6 +22,9 @@ import { StudentMatierePageComponent } from './student/student-matiere-page/stud
 import {ProfessorDataServiceResolver} from './service/resolvers/professor-data.service.resolver';
 import { ProfessorStudentPageComponent } from './professor/professor-student-page/professor-student-page.component';
 import { ExerciceFormComponent } from './kholleur/kholle-group-detail/student-detail/exercice-form/exercice-form.component';
+import { DirectionComponent } from './direction/direction.component';
+import { DragndropComponent } from './dragndrop/dragndrop.component';
+import { DragndropaltComponent } from './dragndropalt/dragndropalt.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,10 @@ import { ExerciceFormComponent } from './kholleur/kholle-group-detail/student-de
     KholleurGroupPageComponent,
     StudentMatierePageComponent,
     ProfessorStudentPageComponent,
-    ExerciceFormComponent
+    ExerciceFormComponent,
+    DirectionComponent,
+    DragndropComponent,
+    DragndropaltComponent
   ],
   imports: [
     BrowserModule,

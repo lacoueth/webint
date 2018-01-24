@@ -1,0 +1,155 @@
+<script>
+
+  var index = 0;
+  var exercices = [];
+  var currentexo = null;
+
+  // Check for the various File API support.
+  if (window.File && window.FileReader && window.FileList && window.Blob) {
+    // Great success! All the File APIs are supported.
+  } else {
+    alert('The File APIs are not fully supported in this browser.');
+  }
+
+  function allowDrop(ev) {
+    ev.preventDefault();
+    document.getElementById('div1').style.border = "4px dotted green";
+  }
+
+  function launchExo(param) {
+    document.getElementById("titlecontent").style.display = "block";
+    this.currentexo = param.value - 1;
+    document.getElementById("titlecontent").innerHTML = 'Vous consultez l\'exercice : ' + param.title;
+    //Set the extension for the file
+    var fileExtensionText = /text.*/;
+    var fileExtensionPdf = /.*pdf/;
+    //Get the file object
+    var fileTobeRead = this.exercices[param.value - 1];
+    //Check of the extension match
+    if (fileTobeRead.type.match(fileExtensionText)) {
+      //Initialize the FileReader object to read the 2file
+      var fileReader = new FileReader();
+      fileReader.onload = function () {
+        var fileContents = document.getElementById('printingtext');
+        fileContents.innerText = fileReader.result;
+      }
+      fileReader.readAsText(fileTobeRead);
+
+      document.getElementById("printingPDF").style.display = "none";
+      document.getElementById("printingtext").style.display = "block";
+    }
+    else if (fileTobeRead.type.match(fileExtensionPdf)) {
+      var url = URL.createObjectURL(fileTobeRead);
+      document.getElementById("printingPDF").setAttribute('width', '400');
+      document.getElementById("printingPDF").setAttribute('height', '400');
+      document.getElementById("printingPDF").setAttribute('data', url);
+
+      document.getElementById("printingPDF").style.display = "block";
+      document.getElementById("printingtext").style.display = "none";
+    }
+    else {
+      alert("Please select text or a pdf file");
+      document.getElementById("printingPDF").style.display = "none";
+      document.getElementById("printingtext").style.display = "none";
+    }
+  }
+
+
+  function quitDrag() {
+    document.getElementById('div1').style.border = "1px solid #aaaaaa";
+  }
+
+  function drop(ev) {
+    ev.preventDefault();
+    var dt = ev.dataTransfer;
+    if (dt.items) {
+      for (var i = 0; i < dt.items.length; i++) {
+        if (dt.items[i].kind == "file") {
+          var f = dt.items[i].getAsFile();
+          if (f.type.match(/.*pdf/) || f.type.match(/text.*/)) {
+            this.index = this.index + 1;
+            var node = document.createElement("LI");
+            var textnode = document.createTextNode(f.name);
+            node.appendChild(textnode);
+            node.setAttribute('onclick', 'launchExo(this)');
+            node.setAttribute('title', f.name);
+            node.setAttribute('value', this.index);
+            this.exercices.push(f);
+            document.getElementById("myList").appendChild(node);
+          }
+          else {
+            alert("Can't load " + f.name + ". Please select text or a pdf file");
+          }
+        }
+      }
+      document.getElementById('div1').style.border = "1px solid #aaaaaa";
+    }
+
+  }
+
+  function handleFiles() {
+    var f = document.getElementById("choosedfile").files[0];
+    if (f.type.match(/.*pdf/) || f.type.match(/text.*/)) {
+      this.index = this.index + 1;
+      var namef = f.name;
+      var node = document.createElement("LI");
+      var textnode = document.createTextNode(namef);
+      node.appendChild(textnode);
+      node.setAttribute('onclick', 'launchExo(this)');
+      node.setAttribute('title', namef);
+      node.setAttribute('value', this.index);
+      this.exercices.push(f);
+      document.getElementById("myList").appendChild(node);
+    }
+    else {
+      alert("Can't load " + f.name + ". Please select text or a pdf file");
+    }
+  }
+
+  function remove() {
+    if (this.currentexo != null) {
+      var list = document.getElementById("myList");
+      list.removeChild(list.childNodes[this.currentexo + 1]);
+      this.exercices.splice(this.currentexo, 1);
+      for (var i = 1; i < this.exercices.length + 1; i++) {
+        list.childNodes[i].setAttribute('value', i)
+      }
+      document.getElementById("printingPDF").style.display = "none";
+      document.getElementById("printingtext").style.display = "none";
+      document.getElementById("titlecontent").style.display = "none";
+      this.index = this.exercices.length;
+      this.currentexo = null;
+    }
+  }
+
+</script>
+
+<!--lieu de drop et affichege de la banque-->
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="quitDrag(event)">
+  <ul id="myList">Banque d'exercices</ul>
+</div>
+
+<!--
+input file
+-->
+<input id="choosedfile" type="file">
+<button id="submit" onclick="handleFiles()">submit</button>
+
+<!--
+remove exo
+-->
+<button id="remove" onclick="remove()">remove</button>
+
+<pre>
+
+
+</pre>
+<!--
+affiche exo
+-->
+<div>
+  <div id="titlecontent"></div>
+  <object type="application/pdf" id="printingPDF"></object>
+  <div id="printingtext"></div>
+</div>
+

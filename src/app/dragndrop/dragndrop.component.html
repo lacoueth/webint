@@ -1,0 +1,33 @@
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="quitDrag(event)">
+  <ul id="myList">Banque d'exercices
+    <li *ngFor="let exo of exercices; let i = index"
+        [value]="i"
+        (click)="launchExo($event)">
+      {{exo.name}}
+    </li>
+  </ul>
+</div>
+
+<!--
+input file
+-->
+<input id="choosedfile" type="file" (change)="handleFiles($event)">
+<!--<button id="submit" (click)="handleFiles($event)">submit</button>-->
+
+<!--
+remove exo
+-->
+<button id="remove" onclick="remove()">remove</button>
+
+<pre>
+
+
+</pre>
+<!--
+affiche exo
+-->
+<div>
+  <div id="titlecontent"></div>
+  <object type="application/pdf" id="printingPDF"></object>
+  <div id="printingtext"></div>
+</div>
