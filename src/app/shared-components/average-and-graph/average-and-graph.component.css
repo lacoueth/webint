@@ -24,4 +24,9 @@
   flex: 1 1 auto;
   background-color: #dfdfdf;
   margin: 0.5rem;
+
+}
+
+.chart {
+  max-height: 230px;
 }

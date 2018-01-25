@@ -61,3 +61,40 @@
 .uploader img.loaded {
   opacity: 1;
 }
+
+.btn-default {
+  border: 2px solid #c837b4;
+  margin-top: 15px;
+  color: #c837b4 !important;
+  transition: all 0.5s;
+
+}
+
+.btn-default:hover{
+  color: #e6e6e6 !important;
+  background-color: #c837b4;
+}
+.btn-default span {
+  cursor: pointer;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btn-default span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+  color: #e6e6e6 !important;
+}
+
+.btn-default:hover span {
+  padding-right: 25px;
+}
+
+.btn-default:hover span:after {
+  opacity: 1;
+  right: 0;
+}

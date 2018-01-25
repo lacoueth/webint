@@ -9,9 +9,16 @@
 
       <input type="file" name="file"
              (change)="handleInputChange($event)">
-      Deposez Vos fichiers ou cliquez ici pour importer un exercice.<br/> Vous devez importer un exercice pour debuter la colle.
+      Deposez Vos fichiers ou cliquez ici pour importer un exercice.<br/> Vous devez importer un exercice pour debuter
+      la colle.
     </label>
   </div>
   <br/>
-  <div *ngIf="exercice!=undefined">Commencer la colle avec l'exercice {{exercice.name}} ? <button class="btn" (click)="startKhole()">Commencer</button></div>
+  <div class="row">
+    <div *ngIf="exercice!=undefined" ><div class="col-lg-8 " style="padding-left: 30px !important" ><h4><br/>Commencer la colle avec l'exercice {{exercice.name}} ?</h4> </div>
+      <div class="col-lg-4 ">
+      <button class="btn btn-default pull-right  btn-lg" (click)="startKhole()" style="padding-right: 30px !important" >Commencer<span></span></button>
+      </div>
+    </div>
+  </div>
 </div>

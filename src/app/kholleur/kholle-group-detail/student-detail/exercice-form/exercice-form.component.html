@@ -5,15 +5,15 @@
   <div class="panel-body" *ngIf="onKhole">
     <div class="form-group">
       <div *ngIf="!onMark">
-      <label for="comment">Commentaires:</label>
+      <label for="comment">Commentaires:</label><br/>
       <textarea [(ngModel)]="comments" class="form-control" rows="5" id="comment" #myComment='ngModel'></textarea>
-        <button class="btn pull-right" [disabled]="comments==''" (click)="onMark=true">Noter</button>
+        <button class="btn pull-right btn-default btn-lg" [disabled]="comments==''" (click)="onMark=true">Noter<span></span></button>
     </div>
 
   </div>
 
   <div *ngIf="onMark">
   <input type="number" [(ngModel)]="mark" #myMark="ngModel" class="form-control">
-  <button class="btn pull-right" [disabled]="mark==undefined" (click)="sendKhole()">Ajouter la Khole</button>
+  <button class="btn btn-default pull-right btn-lg" [disabled]="mark==undefined" (click)="sendKhole()">Ajouter la Khole<span></span></button>
   </div>
 </div>

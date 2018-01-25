@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { FileDropModule } from 'ngx-file-drop';
+import { ChartsModule } from 'ng2-charts';
+
 
 
 import { AppComponent } from './app.component';
@@ -70,7 +72,9 @@ import {FormsModule} from "@angular/forms";
       "clockwise": false
     }),
     FileDropModule,
-    FormsModule
+    FormsModule,
+    ChartsModule
+
 
   ],
   providers: [

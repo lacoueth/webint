@@ -28,9 +28,16 @@
       <div class="panel-heading">
         Dernieres notes
       </div>
-      <div class="panel-body">
+      <div class="panel-body" >
 
-        <img class="img img-responsive" src="assets/images/graph_student.png">
+        <canvas baseChart *ngIf="reload"
+          class="chart"
+          [datasets]="datasets"
+          [labels]="labels"
+          [options]="options"
+          [chartType]="'line'"
+           [colors]="backgroundColor" #canvas id="canva">
+        </canvas>
       </div>
     </div>
 
