@@ -10,9 +10,8 @@ export class NameAndPicComponent implements OnInit {
   @Input() picUrl: string;
   @Input() firstName: string;
   @Input() lastName: string;
-  @Input() matieres: any;
+  @Input() routes: any;
   @Input() inHeader = true;
-
   datetime: string;
 
 
@@ -26,7 +25,7 @@ export class NameAndPicComponent implements OnInit {
     this.firstName = 'Minila';
     this.lastName = 'Abdkoddous';*/
     this.datetime = this.getCurrentDate();
-    console.log(this.matieres)
+
   }
 
   getCurrentDate() {

@@ -9,7 +9,6 @@
   display: block;
 }
 .container {
-  padding-top: 50px;
 }
 @media screen and (max-width: 500px){
   .navbar-btn {

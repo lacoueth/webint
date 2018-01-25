@@ -10,7 +10,7 @@ export class StudentHomeComponent implements OnInit {
 
   studentData: any;
   studentMarks: any;
-
+  groupstopass = [];
   constructor(private _route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -18,6 +18,12 @@ export class StudentHomeComponent implements OnInit {
       console.log(res['studentData']);
       this.studentData = res['studentData']['profile'];
       this.studentMarks = res['studentData']['marks'];
+      console.log(this.studentMarks)
+      this.groupstopass = [];
+
+      for (const x of this.studentMarks) {
+        this.groupstopass.push({name : x.matiere, route: '/student/' + x.matiere})
+      }
     })
   }
 

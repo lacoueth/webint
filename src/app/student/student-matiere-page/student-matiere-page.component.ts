@@ -15,7 +15,7 @@ export class StudentMatierePageComponent implements OnInit {
   datetime : string;
   studentData: any;
   studentMarks: any;
-
+  groupstopass =[];
   studentKholles: {
     date: string;
     hour: string;
@@ -39,7 +39,11 @@ export class StudentMatierePageComponent implements OnInit {
 
       this._route.params.subscribe(param => {
         this.matiere = param['matiere'];
+        this.groupstopass =[];
         this.studentMarks = res['studentData']['marks'];
+        for (const x of this.studentMarks) {
+          this.groupstopass.push({name : x.matiere, route: '/student/' + x.matiere})
+        }
       });
     });
     this.datetime = this.getCurrentDate();

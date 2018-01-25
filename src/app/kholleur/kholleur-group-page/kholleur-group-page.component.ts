@@ -18,12 +18,16 @@ export class KholleurGroupPageComponent implements OnInit {
               private _location: Location) { }
 
   ngOnInit() {
+    this.groupstopass = [];
     this._route.data.subscribe(res => {
       console.log(res['professorData']);
       this.profile = res['professorData']['profile'];
       this.group = res['professorData']['groups'][0];
-      for (const x of res['professorData']['groups']) {
-        this.groupstopass.push({matiere : x.groupName})
+      var groups = res['professorData']['groups'];
+      this.groupstopass = [];
+
+      for (const x of groups) {
+        this.groupstopass.push({name : x.groupName, route: '/kholleur/1/' + x.groupName})
       }
 
     })

@@ -21,7 +21,7 @@ export class KholleurHomeComponent implements OnInit {
       this.profile = res['professorData']['profile'];
       this.groups = res['professorData']['groups'];
       for (const x of this.groups) {
-        this.groupstopass.push({matiere : x.groupName})
+        this.groupstopass.push({name : x.groupName, route: '/kholleur/1/'+x.groupName})
       }
 
     })

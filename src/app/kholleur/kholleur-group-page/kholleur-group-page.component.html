@@ -3,9 +3,13 @@
 
     <app-name-and-pic [firstName]="profile.firstName"
                       [lastName]="profile.lastName"
-                      [picUrl]="profile.profilePicUrl" [matieres]="groupstopass"></app-name-and-pic>
+                      [picUrl]="profile.profilePicUrl" [routes]="groupstopass"></app-name-and-pic>
     <app-date-and-time></app-date-and-time>
   </nav>
+
+</header>
+
+<section id="top">
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="brand navbar-header">
@@ -17,9 +21,6 @@
       <h3 class="pull-right disp"></h3>
     </div>
   </nav>
-</header>
-
-<section id="top">
   <div class="container">
     <app-kholle-group-detail></app-kholle-group-detail>
   </div>

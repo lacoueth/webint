@@ -18,7 +18,7 @@
   </div>
   <ul class="nav navbar-nav">
 
-    <li *ngFor="let matiere of matieres"><a [routerLink]="'/student/'+matiere.matiere">{{matiere.matiere}}</a></li>
+    <li *ngFor="let route of routes"><a [routerLink]="route.route">{{route.name}}</a></li>
 
 
   </ul>

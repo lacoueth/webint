@@ -1,10 +1,14 @@
 <header>
   <nav class="navbar navbar-default navbar-fixed-left">
-    <app-name-and-pic [matieres]="studentMarks" [firstName]="studentData.firstName"
+    <app-name-and-pic [routes]="groupstopass" [firstName]="studentData.firstName"
                       [lastName]="studentData.lastName"
                       [picUrl]="studentData.profilePicUrl"></app-name-and-pic>
     <app-date-and-time></app-date-and-time>
   </nav>
+
+</header>
+
+<section>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="brand navbar-header">
@@ -15,9 +19,6 @@
       <h3 class="pull-right disp">{{datetime}}</h3>
     </div>
   </nav>
-</header>
-
-<section>
   <div class="container">
 
     <app-average-and-graph></app-average-and-graph>
