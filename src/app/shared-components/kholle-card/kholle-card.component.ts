@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 
+import { DomSanitizer } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-kholle-card',
   templateUrl: './kholle-card.component.html',
@@ -11,15 +13,19 @@ export class KholleCardComponent implements OnInit {
     date: string;
     hour: string;
     kholleurName: string;
-    enonce: string;
+    enonce: any;
     comments: string;
     mark: number;
+    typeOfEnonce?: any;
   };
 
-  constructor() {
+  constructor(private sanitizer: DomSanitizer) {
   }
 
   ngOnInit() {
+    if (this.kholleData.typeOfEnonce) {
+      this.kholleData.enonce = this.sanitizer.bypassSecurityTrustUrl(this.kholleData.enonce);
+    }
   }
 
 }

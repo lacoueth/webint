@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-exercice-form',
@@ -6,20 +6,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./exercice-form.component.css']
 })
 export class ExerciceFormComponent implements OnInit {
+  @Output() newKholle = new EventEmitter<any>();
+
   onKhole = false;
   comments: string;
   mark: number;
   exercice: any;
-  onMark: false
-  constructor() { }
+  onMark: false;
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
-  sendKhole(){
 
+  sendKhole() {
+    this.newKholle.emit({
+      exercice: this.exercice,
+      comments: this.comments,
+      mark: this.mark
+    });
   }
- startExercice(event) {
+
+  startExercice(event) {
     this.onKhole = true;
-    this.exercice = event
- }
+    this.exercice = event;
+    console.log(event);
+  }
 }

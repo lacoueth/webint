@@ -21,11 +21,7 @@ export class NameAndPicComponent implements OnInit {
   }
 
   ngOnInit() {
-    /*this.picUrl = 'https://vice-images.vice.com/images/content-images/2016/07/26/ce-que-votre-photo-de-profil-facebook-dit-de-vous-body-image-1469553008.jpg?output-quality=75';
-    this.firstName = 'Minila';
-    this.lastName = 'Abdkoddous';*/
     this.datetime = this.getCurrentDate();
-
   }
 
   getCurrentDate() {
@@ -36,7 +32,4 @@ export class NameAndPicComponent implements OnInit {
     };
     return (new Date()).toLocaleDateString('fr-FR', options);
   }
-
-
-
 }

@@ -1,8 +1,8 @@
 <!--<app-average-and-graph></app-average-and-graph>-->
 
 
-    <app-exercice-form >
-    </app-exercice-form>
+<app-exercice-form (newKholle)="addKholle($event)">
+</app-exercice-form>
 
 <div *ngFor="let _kholle of studentKholles">
   <app-kholle-card [kholleData]="_kholle">
